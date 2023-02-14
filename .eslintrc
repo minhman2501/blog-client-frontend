@@ -1,0 +1,38 @@
+{
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "extends": [
+        "eslint:recommended",
+        "plugin:prettier/recommended",
+        "plugin:tailwindcss/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/eslint-recommended"
+    ],
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 2021,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "plugins": ["tailwindcss", "@typescript-eslint", "prettier"],
+    "rules": {
+        "prettier/prettier": [
+            "warn",
+            {
+                "printWidth": 100,
+                "singleQuote": true,
+                "tabWidth": 4,
+                "trailingComma": "none",
+                "semi": false,
+                "bracketSameLine": true,
+                "arrowParens": "always",
+                "singleAttributePerLine": true
+            }
+        ]
+    }
+}

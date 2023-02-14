@@ -1,0 +1,11 @@
+export const CREATE = 'create'
+export const DETAIL = 'detail'
+export const UPDATE = 'update'
+export const DELETE = 'delete'
+
+export const HOME = '/'
+export const LOGIN = '/login'
+export const BLOGS = 'blogs/*'
+export const AUTHORS = 'authors/*'
+export const REVIEWS = 'reviews/*'
+export const CATEGORIES = 'categories/*'
