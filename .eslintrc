@@ -29,7 +29,7 @@
                 "tabWidth": 4,
                 "trailingComma": "none",
                 "semi": false,
-                "bracketSameLine": true,
+                "bracketSameLine":false,
                 "arrowParens": "always",
                 "singleAttributePerLine": true
             }
