@@ -2,7 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-    .btn {
+:root {
+    --hff: 'Montserrat', sans-serif;
+    --bff: 'Work Sans', sans-serif;
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+        font-family: var(--bff);
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: var(--hff);
+    }
+    h1 {
+        @apply font-extrabold;
+    }
+    h2 {
+        @apply font-semibold;
+    }
+    img {
+        @apply h-full w-full;
     }
 }
