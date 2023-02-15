@@ -1,2 +1,2 @@
 export * from './path'
-export * from './names'
+export * from './variables'

@@ -1,5 +1,6 @@
 import { FormControl, TextField, Button } from '@mui/material'
 import { BRAND_NAME } from '@/configs/constant'
+import { Link } from 'react-router-dom'
 
 export default function LoginForm() {
     return (
@@ -8,7 +9,7 @@ export default function LoginForm() {
                 <h2 className="text-2xl">
                     Welcome back to <span className="text-3xl font-extrabold">{BRAND_NAME}</span>,
                 </h2>
-                <p className="mt-1.5 text-lg text-gray-600">
+                <p className="mt-1.5 text-sm text-gray-600">
                     Please enter your details to sign in.
                 </p>
             </div>
@@ -30,11 +31,17 @@ export default function LoginForm() {
                             variant="outlined"
                         />
                     </FormControl>
+                    <Link
+                        to={'/'}
+                        className="my-1 block text-right"
+                    >
+                        <h2 className="hover:text-primary-2">Forget Password ?</h2>
+                    </Link>
                     <Button
-                        className="buttonPrimary my-3 w-full py-3"
+                        className=" my-3 w-full rounded-full border-4 border-solid py-3 hover:bg-white"
                         variant="contained"
                     >
-                        Sign In
+                        <h1 className="text-lg">Sign In</h1>
                     </Button>
                 </form>
             </div>
