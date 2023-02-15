@@ -2,9 +2,9 @@ import LoginForm from '@/components/LoginForm'
 
 function LoginModal() {
     return (
-        <div className="w-[65vw] overflow-hidden rounded-md border-4 border-black bg-white p-3 ">
+        <div className="w-[70vw] overflow-hidden rounded-lg border-4 border-black bg-white p-2 ">
             <div className="grid min-h-[600px] grid-cols-12">
-                <div className="col-span-7 flex items-center p-6">
+                <div className="col-span-7 flex items-center justify-center">
                     <LoginForm />
                 </div>
                 <div className="col-span-5 overflow-hidden rounded-md">

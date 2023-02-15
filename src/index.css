@@ -29,4 +29,10 @@
     img {
         @apply h-full w-full;
     }
+    .formControl {
+        @apply my-3;
+    }
+    .buttonPrimary {
+        @apply rounded-full border-4 border-black bg-primary-1 font-montserrat font-semibold;
+    }
 }
