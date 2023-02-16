@@ -1,4 +1,4 @@
-import LoginModal from '@/containers/LoginModal'
+import LoginModal from '@/containers/AuthenticationModal'
 
 export default function LoginPage() {
     return (

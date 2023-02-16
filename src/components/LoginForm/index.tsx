@@ -35,10 +35,12 @@ export default function LoginForm() {
                         to={'/'}
                         className="my-1 block text-right"
                     >
-                        <h2 className="hover:text-primary-1">Forget Password ?</h2>
+                        <h2 className="transition duration-150 ease-in hover:text-gray-300">
+                            Forget Password ?
+                        </h2>
                     </Link>
                     <Button
-                        className=" my-3 w-full rounded-full border-4 border-solid py-3 hover:bg-white"
+                        className=" my-3 w-full rounded-full border-4 border-solid py-3 hover:bg-primary-1-light"
                         variant="contained"
                     >
                         <h1 className="text-lg">Sign In</h1>
