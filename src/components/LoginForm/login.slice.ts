@@ -1,8 +1,8 @@
-import { LoginState } from '@/types'
+import { LoginType } from '@/types'
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialState: LoginState = {
-    username: '',
+const initialState: LoginType = {
+    email: '',
     password: ''
 }
 
