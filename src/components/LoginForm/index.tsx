@@ -1,24 +1,32 @@
-import { FormControl, TextField, Button, FormHelperText, Box, FormGroup } from '@mui/material'
-import { BRAND_NAME } from '@/configs/constant'
+import { FormControl, TextField, Box } from '@mui/material'
+import Button from '@mui/material/Button'
+import { LoadingButton } from '@mui/lab'
 import { Link } from 'react-router-dom'
-import { LoginType as IFormInput } from '@/types'
+import { LoginType as IFormInput, LoginType } from '@/types'
 import { loginSchema } from '@/configs/schema/loginSchema'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { useState } from 'react'
+import { initialState } from './login.slice'
 
 export default function LoginForm() {
+    const [loginData, setLoginData] = useState<LoginType>(initialState)
+
     const {
         register,
-        formState: { errors, isSubmitSuccessful },
+        formState: { defaultValues, errors, isSubmitSuccessful, isDirty, isValid },
         reset,
+
         handleSubmit
     } = useForm<IFormInput>({
         mode: 'all',
         resolver: zodResolver(loginSchema)
     })
 
-    const onSubmit = (data: IFormInput) => {
-        console.log(data)
+    const onSubmit = (data: IFormInput) => {}
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setLoginData((previous) => ({ ...previous, [e.target.type]: e.target.value }))
     }
 
     return (
@@ -35,7 +43,10 @@ export default function LoginForm() {
                     error={Boolean(errors.email)}
                     helperText={errors.email?.message}
                     variant="outlined"
-                    {...register('email')}
+                    {...register('email', {
+                        onChange: handleChange,
+                        value: loginData.email
+                    })}
                 />
             </FormControl>
             <FormControl className="my-2.5 w-full">
@@ -46,7 +57,10 @@ export default function LoginForm() {
                     error={Boolean(errors.password)}
                     helperText={errors.password?.message}
                     variant="outlined"
-                    {...register('password')}
+                    {...register('password', {
+                        onChange: handleChange,
+                        value: loginData.password
+                    })}
                 />
             </FormControl>
             <Link
@@ -59,6 +73,7 @@ export default function LoginForm() {
             </Link>
             <Button
                 type="submit"
+                disabled={!isDirty || !isValid}
                 className=" my-3 w-full rounded-full border-4 border-solid py-3 hover:bg-primary-1-light"
                 variant="contained"
             >

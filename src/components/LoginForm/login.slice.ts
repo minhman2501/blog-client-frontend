@@ -1,7 +1,7 @@
 import { LoginType } from '@/types'
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialState: LoginType = {
+export const initialState: LoginType = {
     email: '',
     password: ''
 }

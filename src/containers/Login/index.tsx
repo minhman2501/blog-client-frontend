@@ -1,12 +1,17 @@
 import { BRAND_NAME } from '@/configs/constant'
 import LoginForm from '@/components/LoginForm'
+import { Divider, Stack } from '@mui/material'
 
 function LoginModal() {
     return (
         <div className="flex h-screen w-[100vw] items-center overflow-hidden rounded-lg border-4 border-black bg-white p-2 md:h-auto md:w-[80vw] lg:w-[70vw] ">
             <div className="grid min-h-[600px] w-full grid-cols-1 lg:grid-cols-12">
                 <div className="col-span-12 flex items-center justify-center md:w-full lg:col-span-7">
-                    <div className="m-auto h-[75%] max-h-full w-[70%] max-w-full">
+                    <Stack
+                        direction="column"
+                        spacing={2}
+                        className="m-auto h-[75%] max-h-full w-[70%] max-w-full"
+                    >
                         <div className="">
                             <h2 className="text-2xl">
                                 Welcome back to{' '}
@@ -16,10 +21,7 @@ function LoginModal() {
                                 Please enter your details to sign in.
                             </p>
                         </div>
-                        <div
-                            id="loginForm"
-                            className="mt-6 mb-2"
-                        >
+                        <div id="loginForm">
                             <LoginForm />
                         </div>
                         <div className=" ">
@@ -33,7 +35,7 @@ function LoginModal() {
                                 <p>Sign With Google</p>
                             </div>
                         </div>
-                    </div>
+                    </Stack>
                 </div>
                 <div className="col-span-0 hidden h-full max-h-[600px] overflow-hidden rounded-md lg:col-span-5  lg:block">
                     <img
