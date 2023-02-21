@@ -2,28 +2,33 @@ import { FormControl, TextField, Box } from '@mui/material'
 import Button from '@mui/material/Button'
 import { LoadingButton } from '@mui/lab'
 import { Link } from 'react-router-dom'
-import { LoginType as IFormInput, LoginType } from '@/types'
+import { LoginInputType } from '@/types'
 import { loginSchema } from '@/configs/schema/loginSchema'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useState } from 'react'
-import { initialState } from './login.slice'
 
 export default function LoginForm() {
-    const [loginData, setLoginData] = useState<LoginType>(initialState)
+    const initialLoginInput: LoginInputType = {
+        email: '',
+        password: ''
+    }
+    const [loginData, setLoginData] = useState<LoginInputType>(initialLoginInput)
 
     const {
         register,
-        formState: { defaultValues, errors, isSubmitSuccessful, isDirty, isValid },
+        formState: { errors, isSubmitSuccessful, isDirty, isValid },
         reset,
 
         handleSubmit
-    } = useForm<IFormInput>({
+    } = useForm<LoginInputType>({
         mode: 'all',
         resolver: zodResolver(loginSchema)
     })
 
-    const onSubmit = (data: IFormInput) => {}
+    const onSubmit = (data: LoginInputType) => {
+        console.log(data)
+    }
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setLoginData((previous) => ({ ...previous, [e.target.type]: e.target.value }))
